@@ -8,37 +8,12 @@
 import Foundation
 import RxSwift
 
-struct Region {
-    let minLat: Double
-    let minLong: Double
-    let maxLat: Double
-    let maxLong: Double
-}
-
-struct City {
-    let name: String
-}
-
-struct TransportRequest {
-    let lowerLeftLatLong: (Double, Double)
-    let upperRightLatLong: (Double, Double)
-    let city: String
-}
-
-extension TransportRequest {
-    init(region: Region, city: City) {
-        self.lowerLeftLatLong = (region.minLat, region.minLong)
-        self.upperRightLatLong = (region.maxLat, region.maxLong)
-        self.city = city.name
-    }
-}
-
 protocol TransportRepositoring {
     func fetchTransports(within region: Region, in city: City) -> Single<[Transport]>
 }
 
 protocol TransportAPIClient {
-    func fetchAll(by request: TransportRequest) -> Single<[TransportDataModelV1]>
+    func fetchAll(by request: TransportRequestV1) -> Single<[TransportDataModelV1]>
 }
 
 protocol TransportDataModelToDomainMapping {

@@ -26,6 +26,9 @@
 		5B285FA025767F5100B62C59 /* AnyTransportDataModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285F9F25767F5100B62C59 /* AnyTransportDataModelSpec.swift */; };
 		5B285FA9257680CB00B62C59 /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FA8257680CB00B62C59 /* JsonLoader.swift */; };
 		5B285FB925768A0500B62C59 /* TransportsDataModelV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FB825768A0500B62C59 /* TransportsDataModelV1.swift */; };
+		5B285FC325768A7500B62C59 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FC225768A7500B62C59 /* Region.swift */; };
+		5B285FCB25768A8700B62C59 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FCA25768A8700B62C59 /* City.swift */; };
+		5B285FD125768AC000B62C59 /* TransportRequestV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FD025768AC000B62C59 /* TransportRequestV1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		5B285F9F25767F5100B62C59 /* AnyTransportDataModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransportDataModelSpec.swift; sourceTree = "<group>"; };
 		5B285FA8257680CB00B62C59 /* JsonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonLoader.swift; sourceTree = "<group>"; };
 		5B285FB825768A0500B62C59 /* TransportsDataModelV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsDataModelV1.swift; sourceTree = "<group>"; };
+		5B285FC225768A7500B62C59 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		5B285FCA25768A8700B62C59 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		5B285FD025768AC000B62C59 /* TransportRequestV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportRequestV1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		5B230D782575525100A161A2 /* MeepTest */ = {
 			isa = PBXGroup;
 			children = (
+				5B285FC025768A5900B62C59 /* Domain */,
 				5B285FB6257689E100B62C59 /* Data */,
 				5B285F82257656F700B62C59 /* UseCases */,
 				5B230D792575525100A161A2 /* AppDelegate.swift */,
@@ -128,7 +135,6 @@
 				5B230D822575525400A161A2 /* Assets.xcassets */,
 				5B230D842575525400A161A2 /* LaunchScreen.storyboard */,
 				5B230D872575525400A161A2 /* Info.plist */,
-				5B285F592576516500B62C59 /* Transport.swift */,
 				5B285F612576526E00B62C59 /* TransportRepository.swift */,
 			);
 			path = MeepTest;
@@ -207,6 +213,7 @@
 		5B285FB6257689E100B62C59 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5B285FCF25768AAC00B62C59 /* RequestDataModel */,
 				5B285FB7257689E600B62C59 /* DataModelV1 */,
 			);
 			path = Data;
@@ -218,6 +225,32 @@
 				5B285FB825768A0500B62C59 /* TransportsDataModelV1.swift */,
 			);
 			path = DataModelV1;
+			sourceTree = "<group>";
+		};
+		5B285FC025768A5900B62C59 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5B285FC125768A6000B62C59 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5B285FC125768A6000B62C59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B285F592576516500B62C59 /* Transport.swift */,
+				5B285FC225768A7500B62C59 /* Region.swift */,
+				5B285FCA25768A8700B62C59 /* City.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B285FCF25768AAC00B62C59 /* RequestDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B285FD025768AC000B62C59 /* TransportRequestV1.swift */,
+			);
+			path = RequestDataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,8 +400,11 @@
 				5B285FB925768A0500B62C59 /* TransportsDataModelV1.swift in Sources */,
 				5B230D7A2575525100A161A2 /* AppDelegate.swift in Sources */,
 				5B285F622576526E00B62C59 /* TransportRepository.swift in Sources */,
+				5B285FD125768AC000B62C59 /* TransportRequestV1.swift in Sources */,
 				5B285F842576570A00B62C59 /* TransportsFetcher.swift in Sources */,
+				5B285FC325768A7500B62C59 /* Region.swift in Sources */,
 				5B285F5A2576516500B62C59 /* Transport.swift in Sources */,
+				5B285FCB25768A8700B62C59 /* City.swift in Sources */,
 				5B230D7C2575525100A161A2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
