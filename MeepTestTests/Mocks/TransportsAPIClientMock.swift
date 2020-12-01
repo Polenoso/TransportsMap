@@ -10,7 +10,7 @@ import RxSwift
 @testable import MeepTest
 
 final class TransportAPIClientMock: TransportAPIClient {
-    func fetchAll(by request: TransportRequest) -> Single<[TransportDataModelV1]> {
+    func fetchAll(_ request: TransportRequestV1) -> Single<[TransportDataModelV1]> {
         .just([])
     }
 }

@@ -31,6 +31,8 @@
 		5B285FD125768AC000B62C59 /* TransportRequestV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FD025768AC000B62C59 /* TransportRequestV1.swift */; };
 		5B285FDA25768C3100B62C59 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FD925768C3100B62C59 /* APIClient.swift */; };
 		5B285FE025768D6F00B62C59 /* TransportDataModelToDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FDF25768D6F00B62C59 /* TransportDataModelToDomainMapper.swift */; };
+		5B285FE625768EEE00B62C59 /* AnyTransportDataModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FE525768EEE00B62C59 /* AnyTransportDataModelMapper.swift */; };
+		5B285FF125768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FF025768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		5B285FD025768AC000B62C59 /* TransportRequestV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportRequestV1.swift; sourceTree = "<group>"; };
 		5B285FD925768C3100B62C59 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		5B285FDF25768D6F00B62C59 /* TransportDataModelToDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDataModelToDomainMapper.swift; sourceTree = "<group>"; };
+		5B285FE525768EEE00B62C59 /* AnyTransportDataModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransportDataModelMapper.swift; sourceTree = "<group>"; };
+		5B285FF025768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransportDataModelToDomainSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +203,8 @@
 		5B285F9E25767F1500B62C59 /* Unit */ = {
 			isa = PBXGroup;
 			children = (
-				5B285F9F25767F5100B62C59 /* AnyTransportDataModelSpec.swift */,
+				5B285FEE25768FB600B62C59 /* Infrastructure */,
+				5B285FED25768FAE00B62C59 /* Domain */,
 			);
 			path = Unit;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 		5B285FD625768BFA00B62C59 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				5B285FE425768EC000B62C59 /* Mappers */,
 				5B285FD725768C0400B62C59 /* APIClient */,
 			);
 			path = Infrastructure;
@@ -295,6 +301,38 @@
 			isa = PBXGroup;
 			children = (
 				5B285FDF25768D6F00B62C59 /* TransportDataModelToDomainMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		5B285FE425768EC000B62C59 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				5B285FE525768EEE00B62C59 /* AnyTransportDataModelMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		5B285FED25768FAE00B62C59 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5B285F9F25767F5100B62C59 /* AnyTransportDataModelSpec.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5B285FEE25768FB600B62C59 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				5B285FEF25768FC500B62C59 /* Mappers */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		5B285FEF25768FC500B62C59 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				5B285FF025768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -446,6 +484,7 @@
 				5B285FB925768A0500B62C59 /* TransportsDataModelV1.swift in Sources */,
 				5B230D7A2575525100A161A2 /* AppDelegate.swift in Sources */,
 				5B285F622576526E00B62C59 /* TransportRepository.swift in Sources */,
+				5B285FE625768EEE00B62C59 /* AnyTransportDataModelMapper.swift in Sources */,
 				5B285FE025768D6F00B62C59 /* TransportDataModelToDomainMapper.swift in Sources */,
 				5B285FDA25768C3100B62C59 /* APIClient.swift in Sources */,
 				5B285FD125768AC000B62C59 /* TransportRequestV1.swift in Sources */,
@@ -461,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B285FF125768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift in Sources */,
 				5B285FA9257680CB00B62C59 /* JsonLoader.swift in Sources */,
 				5B230D912575525400A161A2 /* MeepTestTests.swift in Sources */,
 				5B285FA025767F5100B62C59 /* AnyTransportDataModelSpec.swift in Sources */,

@@ -17,14 +17,14 @@ final class TransportRepository: TransportRepositoring {
     private let mapper: TransportDataModelToDomainMapping
     
     init(client: TransportAPIClient,
-         mapper: TransportDataModelToDomainMapping = TransportDataModelToDomainMapper()) {
+         mapper: TransportDataModelToDomainMapping) {
         self.client = client
         self.mapper = mapper
     }
     
     func fetchTransports(within region: Region, in city: City) -> Single<[Transport]> {
         client
-            .fetchAll(by: .init(region: region, city: city))
+            .fetchAll(.init(region: region, city: city))
             .map(mapper.map)
     }
 }

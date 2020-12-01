@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol TransportAPIClient {
-    func fetchAll(by request: TransportRequestV1) -> Single<[TransportDataModelV1]>
+    func fetchAll(_ request: TransportRequestV1) -> Single<[TransportDataModelV1]>
 }
