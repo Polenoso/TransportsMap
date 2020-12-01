@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,18 @@
 		5B230D862575525400A161A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B230D842575525400A161A2 /* LaunchScreen.storyboard */; };
 		5B230D912575525400A161A2 /* MeepTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B230D902575525400A161A2 /* MeepTestTests.swift */; };
 		5B230D9C2575525400A161A2 /* MeepTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B230D9B2575525400A161A2 /* MeepTestUITests.swift */; };
+		5B285F5A2576516500B62C59 /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285F592576516500B62C59 /* Transport.swift */; };
+		5B285F622576526E00B62C59 /* TransportRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285F612576526E00B62C59 /* TransportRepository.swift */; };
+		5B285F682576538900B62C59 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B285F672576538900B62C59 /* RxSwift */; };
+		5B285F6A2576538900B62C59 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5B285F692576538900B62C59 /* RxCocoa */; };
+		5B285F6C2576538900B62C59 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 5B285F6B2576538900B62C59 /* RxBlocking */; };
+		5B285F72257655B800B62C59 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 5B285F71257655B800B62C59 /* Quick */; };
+		5B285F78257655F100B62C59 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 5B285F77257655F100B62C59 /* Nimble */; };
+		5B285F842576570A00B62C59 /* TransportsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285F832576570A00B62C59 /* TransportsFetcher.swift */; };
+		5B285F8E257658B500B62C59 /* TransportsAPIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285F8D257658B500B62C59 /* TransportsAPIClientMock.swift */; };
+		5B285F9725767EF900B62C59 /* TransportsSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B285F9625767EF900B62C59 /* TransportsSuccessResponse.json */; };
+		5B285FA025767F5100B62C59 /* AnyTransportDataModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285F9F25767F5100B62C59 /* AnyTransportDataModelSpec.swift */; };
+		5B285FA9257680CB00B62C59 /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FA8257680CB00B62C59 /* JsonLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +57,13 @@
 		5B230D972575525400A161A2 /* MeepTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeepTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B230D9B2575525400A161A2 /* MeepTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeepTestUITests.swift; sourceTree = "<group>"; };
 		5B230D9D2575525400A161A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B285F592576516500B62C59 /* Transport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transport.swift; sourceTree = "<group>"; };
+		5B285F612576526E00B62C59 /* TransportRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportRepository.swift; sourceTree = "<group>"; };
+		5B285F832576570A00B62C59 /* TransportsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsFetcher.swift; sourceTree = "<group>"; };
+		5B285F8D257658B500B62C59 /* TransportsAPIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsAPIClientMock.swift; sourceTree = "<group>"; };
+		5B285F9625767EF900B62C59 /* TransportsSuccessResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TransportsSuccessResponse.json; sourceTree = "<group>"; };
+		5B285F9F25767F5100B62C59 /* AnyTransportDataModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransportDataModelSpec.swift; sourceTree = "<group>"; };
+		5B285FA8257680CB00B62C59 /* JsonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B285F6A2576538900B62C59 /* RxCocoa in Frameworks */,
+				5B285F6C2576538900B62C59 /* RxBlocking in Frameworks */,
+				5B285F682576538900B62C59 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B285F72257655B800B62C59 /* Quick in Frameworks */,
+				5B285F78257655F100B62C59 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +119,14 @@
 		5B230D782575525100A161A2 /* MeepTest */ = {
 			isa = PBXGroup;
 			children = (
+				5B285F82257656F700B62C59 /* UseCases */,
 				5B230D792575525100A161A2 /* AppDelegate.swift */,
 				5B230D7B2575525100A161A2 /* SceneDelegate.swift */,
 				5B230D822575525400A161A2 /* Assets.xcassets */,
 				5B230D842575525400A161A2 /* LaunchScreen.storyboard */,
 				5B230D872575525400A161A2 /* Info.plist */,
+				5B285F592576516500B62C59 /* Transport.swift */,
+				5B285F612576526E00B62C59 /* TransportRepository.swift */,
 			);
 			path = MeepTest;
 			sourceTree = "<group>";
@@ -107,6 +134,11 @@
 		5B230D8F2575525400A161A2 /* MeepTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				5B285FA72576807400B62C59 /* Helpers */,
+				5B285F9E25767F1500B62C59 /* Unit */,
+				5B285F9525767ED300B62C59 /* Resources */,
+				5B285F8C257658A400B62C59 /* Mocks */,
+				5B285F8B2576585100B62C59 /* Integration */,
 				5B230D902575525400A161A2 /* MeepTestTests.swift */,
 				5B230D922575525400A161A2 /* Info.plist */,
 			);
@@ -120,6 +152,53 @@
 				5B230D9D2575525400A161A2 /* Info.plist */,
 			);
 			path = MeepTestUITests;
+			sourceTree = "<group>";
+		};
+		5B285F82257656F700B62C59 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				5B285F832576570A00B62C59 /* TransportsFetcher.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		5B285F8B2576585100B62C59 /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Integration;
+			sourceTree = "<group>";
+		};
+		5B285F8C257658A400B62C59 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5B285F8D257658B500B62C59 /* TransportsAPIClientMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		5B285F9525767ED300B62C59 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5B285F9625767EF900B62C59 /* TransportsSuccessResponse.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5B285F9E25767F1500B62C59 /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				5B285F9F25767F5100B62C59 /* AnyTransportDataModelSpec.swift */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		5B285FA72576807400B62C59 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5B285FA8257680CB00B62C59 /* JsonLoader.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +217,11 @@
 			dependencies = (
 			);
 			name = MeepTest;
+			packageProductDependencies = (
+				5B285F672576538900B62C59 /* RxSwift */,
+				5B285F692576538900B62C59 /* RxCocoa */,
+				5B285F6B2576538900B62C59 /* RxBlocking */,
+			);
 			productName = MeepTest;
 			productReference = 5B230D762575525100A161A2 /* MeepTest.app */;
 			productType = "com.apple.product-type.application";
@@ -156,6 +240,10 @@
 				5B230D8E2575525400A161A2 /* PBXTargetDependency */,
 			);
 			name = MeepTestTests;
+			packageProductDependencies = (
+				5B285F71257655B800B62C59 /* Quick */,
+				5B285F77257655F100B62C59 /* Nimble */,
+			);
 			productName = MeepTestTests;
 			productReference = 5B230D8C2575525400A161A2 /* MeepTestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -209,6 +297,11 @@
 				Base,
 			);
 			mainGroup = 5B230D6D2575525100A161A2;
+			packageReferences = (
+				5B285F662576538900B62C59 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				5B285F70257655B800B62C59 /* XCRemoteSwiftPackageReference "Quick" */,
+				5B285F76257655F100B62C59 /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = 5B230D772575525100A161A2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B285F9725767EF900B62C59 /* TransportsSuccessResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +346,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B230D7A2575525100A161A2 /* AppDelegate.swift in Sources */,
+				5B285F622576526E00B62C59 /* TransportRepository.swift in Sources */,
+				5B285F842576570A00B62C59 /* TransportsFetcher.swift in Sources */,
+				5B285F5A2576516500B62C59 /* Transport.swift in Sources */,
 				5B230D7C2575525100A161A2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +357,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B285FA9257680CB00B62C59 /* JsonLoader.swift in Sources */,
 				5B230D912575525400A161A2 /* MeepTestTests.swift in Sources */,
+				5B285FA025767F5100B62C59 /* AnyTransportDataModelSpec.swift in Sources */,
+				5B285F8E257658B500B62C59 /* TransportsAPIClientMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -405,7 +505,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -420,7 +520,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MeepTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -429,6 +530,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.polenoso.MeepTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,7 +541,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MeepTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -448,6 +551,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.polenoso.MeepTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -573,6 +677,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5B285F662576538900B62C59 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = "6.0.0-rc.2";
+			};
+		};
+		5B285F70257655B800B62C59 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		5B285F76257655F100B62C59 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5B285F672576538900B62C59 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B285F662576538900B62C59 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		5B285F692576538900B62C59 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B285F662576538900B62C59 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		5B285F6B2576538900B62C59 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B285F662576538900B62C59 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		5B285F71257655B800B62C59 /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B285F70257655B800B62C59 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		5B285F77257655F100B62C59 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B285F76257655F100B62C59 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B230D6E2575525100A161A2 /* Project object */;
 }
