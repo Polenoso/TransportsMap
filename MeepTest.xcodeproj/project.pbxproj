@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5B230D7A2575525100A161A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B230D792575525100A161A2 /* AppDelegate.swift */; };
-		5B230D7C2575525100A161A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B230D7B2575525100A161A2 /* SceneDelegate.swift */; };
 		5B230D832575525400A161A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B230D822575525400A161A2 /* Assets.xcassets */; };
 		5B230D862575525400A161A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B230D842575525400A161A2 /* LaunchScreen.storyboard */; };
 		5B230D912575525400A161A2 /* MeepTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B230D902575525400A161A2 /* MeepTestTests.swift */; };
@@ -33,6 +32,9 @@
 		5B285FE025768D6F00B62C59 /* TransportDataModelToDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FDF25768D6F00B62C59 /* TransportDataModelToDomainMapper.swift */; };
 		5B285FE625768EEE00B62C59 /* AnyTransportDataModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FE525768EEE00B62C59 /* AnyTransportDataModelMapper.swift */; };
 		5B285FF125768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FF025768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift */; };
+		5B4183652577F80600AB572D /* TransportsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183642577F80600AB572D /* TransportsMapViewController.swift */; };
+		5B41836D2577F81300AB572D /* TransportsMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41836C2577F81300AB572D /* TransportsMapViewModel.swift */; };
+		5B41837225780A9800AB572D /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41837125780A9800AB572D /* MockAPIClient.swift */; };
 		5B4957BC2577DD560070F04B /* TransportsFetcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +58,6 @@
 /* Begin PBXFileReference section */
 		5B230D762575525100A161A2 /* MeepTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeepTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B230D792575525100A161A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B230D7B2575525100A161A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5B230D822575525400A161A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B230D852575525400A161A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B230D872575525400A161A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +82,9 @@
 		5B285FDF25768D6F00B62C59 /* TransportDataModelToDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDataModelToDomainMapper.swift; sourceTree = "<group>"; };
 		5B285FE525768EEE00B62C59 /* AnyTransportDataModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransportDataModelMapper.swift; sourceTree = "<group>"; };
 		5B285FF025768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransportDataModelToDomainSpec.swift; sourceTree = "<group>"; };
+		5B4183642577F80600AB572D /* TransportsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsMapViewController.swift; sourceTree = "<group>"; };
+		5B41836C2577F81300AB572D /* TransportsMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsMapViewModel.swift; sourceTree = "<group>"; };
+		5B41837125780A9800AB572D /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
 		5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsFetcherSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,7 +145,6 @@
 				5B285FD625768BFA00B62C59 /* Infrastructure */,
 				5B285FC025768A5900B62C59 /* Domain */,
 				5B230D792575525100A161A2 /* AppDelegate.swift */,
-				5B230D7B2575525100A161A2 /* SceneDelegate.swift */,
 				5B230D822575525400A161A2 /* Assets.xcassets */,
 				5B230D842575525400A161A2 /* LaunchScreen.storyboard */,
 				5B230D872575525400A161A2 /* Info.plist */,
@@ -287,6 +290,7 @@
 		5B285FD725768C0400B62C59 /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
+				5B41837125780A9800AB572D /* MockAPIClient.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -351,9 +355,19 @@
 		5B285FF92576ADBF00B62C59 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				5B4183632577F7C600AB572D /* UI */,
 				5B285F82257656F700B62C59 /* UseCases */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		5B4183632577F7C600AB572D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5B4183642577F80600AB572D /* TransportsMapViewController.swift */,
+				5B41836C2577F81300AB572D /* TransportsMapViewModel.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		5B4957B92577DD130070F04B /* Application */ = {
@@ -522,12 +536,14 @@
 				5B285FE625768EEE00B62C59 /* AnyTransportDataModelMapper.swift in Sources */,
 				5B285FE025768D6F00B62C59 /* TransportDataModelToDomainMapper.swift in Sources */,
 				5B285FDA25768C3100B62C59 /* APIClient.swift in Sources */,
+				5B4183652577F80600AB572D /* TransportsMapViewController.swift in Sources */,
 				5B285FD125768AC000B62C59 /* TransportRequestV1.swift in Sources */,
 				5B285F842576570A00B62C59 /* TransportsFetcher.swift in Sources */,
+				5B41836D2577F81300AB572D /* TransportsMapViewModel.swift in Sources */,
 				5B285FC325768A7500B62C59 /* Region.swift in Sources */,
 				5B285F5A2576516500B62C59 /* Transport.swift in Sources */,
 				5B285FCB25768A8700B62C59 /* City.swift in Sources */,
-				5B230D7C2575525100A161A2 /* SceneDelegate.swift in Sources */,
+				5B41837225780A9800AB572D /* MockAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
