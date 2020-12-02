@@ -33,6 +33,7 @@
 		5B285FE025768D6F00B62C59 /* TransportDataModelToDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FDF25768D6F00B62C59 /* TransportDataModelToDomainMapper.swift */; };
 		5B285FE625768EEE00B62C59 /* AnyTransportDataModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FE525768EEE00B62C59 /* AnyTransportDataModelMapper.swift */; };
 		5B285FF125768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B285FF025768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift */; };
+		5B4957BC2577DD560070F04B /* TransportsFetcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		5B285FDF25768D6F00B62C59 /* TransportDataModelToDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDataModelToDomainMapper.swift; sourceTree = "<group>"; };
 		5B285FE525768EEE00B62C59 /* AnyTransportDataModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransportDataModelMapper.swift; sourceTree = "<group>"; };
 		5B285FF025768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransportDataModelToDomainSpec.swift; sourceTree = "<group>"; };
+		5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsFetcherSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		5B230D782575525100A161A2 /* MeepTest */ = {
 			isa = PBXGroup;
 			children = (
+				5B285FF92576ADBF00B62C59 /* Application */,
 				5B285FD625768BFA00B62C59 /* Infrastructure */,
 				5B285FC025768A5900B62C59 /* Domain */,
 				5B230D792575525100A161A2 /* AppDelegate.swift */,
@@ -203,6 +206,7 @@
 		5B285F9E25767F1500B62C59 /* Unit */ = {
 			isa = PBXGroup;
 			children = (
+				5B4957B92577DD130070F04B /* Application */,
 				5B285FEE25768FB600B62C59 /* Infrastructure */,
 				5B285FED25768FAE00B62C59 /* Domain */,
 			);
@@ -240,7 +244,6 @@
 				5B285FDE25768D5700B62C59 /* Mappers */,
 				5B285FD825768C0E00B62C59 /* Client */,
 				5B285FD525768BDA00B62C59 /* Repository */,
-				5B285F82257656F700B62C59 /* UseCases */,
 				5B285FC125768A6000B62C59 /* Model */,
 			);
 			path = Domain;
@@ -291,6 +294,7 @@
 		5B285FD825768C0E00B62C59 /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				5B285FF82576AD1500B62C59 /* Endpoint */,
 				5B285FB6257689E100B62C59 /* Data */,
 				5B285FD925768C3100B62C59 /* APIClient.swift */,
 			);
@@ -335,6 +339,37 @@
 				5B285FF025768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift */,
 			);
 			path = Mappers;
+			sourceTree = "<group>";
+		};
+		5B285FF82576AD1500B62C59 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		5B285FF92576ADBF00B62C59 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5B285F82257656F700B62C59 /* UseCases */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5B4957B92577DD130070F04B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5B4957BA2577DD180070F04B /* UseCases */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5B4957BA2577DD180070F04B /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,6 +539,7 @@
 				5B285FA9257680CB00B62C59 /* JsonLoader.swift in Sources */,
 				5B230D912575525400A161A2 /* MeepTestTests.swift in Sources */,
 				5B285FA025767F5100B62C59 /* AnyTransportDataModelSpec.swift in Sources */,
+				5B4957BC2577DD560070F04B /* TransportsFetcherSpec.swift in Sources */,
 				5B285F8E257658B500B62C59 /* TransportsAPIClientMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

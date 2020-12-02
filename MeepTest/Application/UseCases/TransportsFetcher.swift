@@ -8,6 +8,10 @@
 import Foundation
 import RxSwift
 
+enum FetchTransportError: Error {
+    case fetchingNotSuccess
+}
+
 final class TransportsFetcher {
     private let repository: TransportRepositoring
     
@@ -16,6 +20,7 @@ final class TransportsFetcher {
     }
     
     func callAsFunction(region: Region, city: City) -> Single<[Transport]> {
-        repository.fetchTransports(within: region, in: city)
+        repository
+            .fetchTransports(within: region, in: city)
     }
 }
