@@ -9,4 +9,6 @@ import Foundation
 
 struct City {
     let name: String
+    let centerLat: Double
+    let centerLon: Double
 }

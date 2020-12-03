@@ -7,25 +7,15 @@
 
 import Foundation
 import RxSwift
-import MapKit //TODO: remove from VM
 import CoreLocation
 
 protocol TransportsMapInput: AnyObject {
-    var viewState: TransportsMapViewState { get }
+    var transports: [TransportViewState] { get }
+    var mapRegion: MapViewRegion { get }
     func onLoad()
 }
 protocol TransportsMapOutput: AnyObject {
     func stateChanged()
-}
-
-struct TransportViewState {
-    let annotation: MKAnnotation
-    
-    init(from transport: Transport) {
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: transport.positionX, longitude: transport.positionY)
-        self.annotation = annotation
-    }
 }
 
 struct TransportsMapViewState {
@@ -39,8 +29,6 @@ struct TransportsMapViewState {
 }
 
 final class TransportsMapViewModel: TransportsMapInput {
-    private(set) var viewState: TransportsMapViewState
-    
     private weak var output: TransportsMapOutput?
     
     //MARK: - usecases
@@ -49,6 +37,12 @@ final class TransportsMapViewModel: TransportsMapInput {
     //MARK: - DisposeBag
     private let disposeBag = DisposeBag()
     
+    //MARK: - View State
+    private(set) var transports: [TransportViewState]
+    
+    var mapRegion: MapViewRegion
+    
+    //MARK: - Private parameters
     private var city: City
     private var region: Region
     
@@ -56,28 +50,22 @@ final class TransportsMapViewModel: TransportsMapInput {
          region: Region,
          city: City,
          transportsFetch: TransportsFetcher) {
-        self.viewState = .init(loading: true,
-                               cityName: city.name,
-                               minLatitude: region.minLat,
-                               maxLatitude: region.maxLat,
-                               minLongitude: region.minLong,
-                               maxLongitude: region.maxLong,
-                               transports: [])
+        self.transports = []
         self.output = output
         self.city = city
         self.region = region
+        self.mapRegion = .init(center: .init(latitude: city.centerLat, longitude: city.centerLon))
         self.transportsFetch = transportsFetch
     }
     
     func onLoad() {
         transportsFetch(region: region, city: city)
-            .observe(on: MainScheduler.instance)
+            .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { transports in
-                self.viewState.transports = transports.map(TransportViewState.init)
+                self.transports = transports.map(TransportViewState.init)
                 self.output?.stateChanged()
             })
             .disposed(by: disposeBag)
-
     }
 }
 

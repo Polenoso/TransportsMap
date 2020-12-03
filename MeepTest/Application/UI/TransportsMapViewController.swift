@@ -23,19 +23,27 @@ final class TransportsMapViewController: UIViewController {
                            mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor)]
         NSLayoutConstraint.activate(constraints)
         
+        setupMapView()
+        
+        input?.onLoad()
+    }
+    
+    private func setupMapView() {
         mapView.mapType = .standard
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
         mapView.delegate = self
-        
-        input?.onLoad()
+        guard let center = input?.mapRegion.center else { return }
+        mapView.region = .init(center: center, span: MKCoordinateSpan())
     }
 }
 
 extension TransportsMapViewController: TransportsMapOutput {
     func stateChanged() {
         guard let input = input else { return }
-        mapView.addAnnotations(input.viewState.transports.map(\.annotation))
+        let annotations = mapView.annotations
+        mapView.removeAnnotations(annotations)
+        mapView.addAnnotations(input.transports.map(\.annotation))
     }
 }
 

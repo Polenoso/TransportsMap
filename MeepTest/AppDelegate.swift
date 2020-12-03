@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                        minLong: -9.160096,
                                                        maxLat: 38.739429,
                                                        maxLong: -9.137115),
-                                        city: City(name: "Mock"),
+                                        city: City(name: "Mock",
+                                                   centerLat: 38.736946,
+                                                   centerLon: -9.142685),
                                         transportsFetch: TransportsFetcher(repository: TransportRepository(client: MockAPIClient(),
                                                                                                            mapper: AnyTransportDataModelToDomainMapper())))
         vc.input = vm
