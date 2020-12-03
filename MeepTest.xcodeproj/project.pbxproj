@@ -35,6 +35,10 @@
 		5B4183652577F80600AB572D /* TransportsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183642577F80600AB572D /* TransportsMapViewController.swift */; };
 		5B41836D2577F81300AB572D /* TransportsMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41836C2577F81300AB572D /* TransportsMapViewModel.swift */; };
 		5B41837225780A9800AB572D /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41837125780A9800AB572D /* MockAPIClient.swift */; };
+		5B41837F2578FFC700AB572D /* TransportsMapViewStateModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41837E2578FFC700AB572D /* TransportsMapViewStateModels.swift */; };
+		5B4183842579018D00AB572D /* TransportsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183832579018D00AB572D /* TransportsAPIClient.swift */; };
+		5B41838D2579346800AB572D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 5B41838C2579346800AB572D /* Moya */; };
+		5B41838F2579346800AB572D /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 5B41838E2579346800AB572D /* RxMoya */; };
 		5B4957BC2577DD560070F04B /* TransportsFetcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +89,8 @@
 		5B4183642577F80600AB572D /* TransportsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsMapViewController.swift; sourceTree = "<group>"; };
 		5B41836C2577F81300AB572D /* TransportsMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsMapViewModel.swift; sourceTree = "<group>"; };
 		5B41837125780A9800AB572D /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
+		5B41837E2578FFC700AB572D /* TransportsMapViewStateModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsMapViewStateModels.swift; sourceTree = "<group>"; };
+		5B4183832579018D00AB572D /* TransportsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsAPIClient.swift; sourceTree = "<group>"; };
 		5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsFetcherSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,8 +99,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B41838F2579346800AB572D /* RxMoya in Frameworks */,
 				5B285F6A2576538900B62C59 /* RxCocoa in Frameworks */,
 				5B285F6C2576538900B62C59 /* RxBlocking in Frameworks */,
+				5B41838D2579346800AB572D /* Moya in Frameworks */,
 				5B285F682576538900B62C59 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				5B41837125780A9800AB572D /* MockAPIClient.swift */,
+				5B4183832579018D00AB572D /* TransportsAPIClient.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -366,6 +375,7 @@
 			children = (
 				5B4183642577F80600AB572D /* TransportsMapViewController.swift */,
 				5B41836C2577F81300AB572D /* TransportsMapViewModel.swift */,
+				5B41837E2578FFC700AB572D /* TransportsMapViewStateModels.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -406,6 +416,8 @@
 				5B285F672576538900B62C59 /* RxSwift */,
 				5B285F692576538900B62C59 /* RxCocoa */,
 				5B285F6B2576538900B62C59 /* RxBlocking */,
+				5B41838C2579346800AB572D /* Moya */,
+				5B41838E2579346800AB572D /* RxMoya */,
 			);
 			productName = MeepTest;
 			productReference = 5B230D762575525100A161A2 /* MeepTest.app */;
@@ -486,6 +498,7 @@
 				5B285F662576538900B62C59 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				5B285F70257655B800B62C59 /* XCRemoteSwiftPackageReference "Quick" */,
 				5B285F76257655F100B62C59 /* XCRemoteSwiftPackageReference "Nimble" */,
+				5B41838B2579346800AB572D /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 5B230D772575525100A161A2 /* Products */;
 			projectDirPath = "";
@@ -542,6 +555,8 @@
 				5B41836D2577F81300AB572D /* TransportsMapViewModel.swift in Sources */,
 				5B285FC325768A7500B62C59 /* Region.swift in Sources */,
 				5B285F5A2576516500B62C59 /* Transport.swift in Sources */,
+				5B41837F2578FFC700AB572D /* TransportsMapViewStateModels.swift in Sources */,
+				5B4183842579018D00AB572D /* TransportsAPIClient.swift in Sources */,
 				5B285FCB25768A8700B62C59 /* City.swift in Sources */,
 				5B41837225780A9800AB572D /* MockAPIClient.swift in Sources */,
 			);
@@ -879,8 +894,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
-				kind = exactVersion;
-				version = "6.0.0-rc.2";
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 		5B285F70257655B800B62C59 /* XCRemoteSwiftPackageReference "Quick" */ = {
@@ -897,6 +912,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 9.0.0;
+			};
+		};
+		5B41838B2579346800AB572D /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -926,6 +949,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B285F76257655F100B62C59 /* XCRemoteSwiftPackageReference "Nimble" */;
 			productName = Nimble;
+		};
+		5B41838C2579346800AB572D /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B41838B2579346800AB572D /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		5B41838E2579346800AB572D /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B41838B2579346800AB572D /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "9e0328127dfb801cefe8ac53a13c0c90a7770448",
+          "version": "5.4.0"
+        }
+      },
+      {
         "package": "CwlCatchException",
         "repositoryURL": "https://github.com/mattgallagher/CwlCatchException.git",
         "state": {
@@ -17,6 +26,15 @@
           "branch": null,
           "revision": "02b7a39a99c4da27abe03cab2053a9034379639f",
           "version": "2.0.0"
+        }
+      },
+      {
+        "package": "Moya",
+        "repositoryURL": "https://github.com/Moya/Moya.git",
+        "state": {
+          "branch": null,
+          "revision": "b3e5a233e0d85fd4d69f561c80988590859c7dee",
+          "version": "14.0.0"
         }
       },
       {
@@ -38,12 +56,21 @@
         }
       },
       {
+        "package": "ReactiveSwift",
+        "repositoryURL": "https://github.com/Moya/ReactiveSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "f195d82bb30e412e70446e2b4a77e1b514099e88",
+          "version": "6.1.0"
+        }
+      },
+      {
         "package": "RxSwift",
         "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
         "state": {
           "branch": null,
-          "revision": "97e14358a3e6564de8a6289362385a92d85936e1",
-          "version": "6.0.0-rc.2"
+          "revision": "002d325b0bdee94e7882e1114af5ff4fe1e96afa",
+          "version": "5.1.1"
         }
       }
     ]
