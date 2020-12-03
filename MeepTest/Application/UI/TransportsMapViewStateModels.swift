@@ -13,7 +13,7 @@ struct TransportViewState {
     
     init(from transport: Transport) {
         let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: transport.positionX, longitude: transport.positionY)
+        annotation.coordinate = CLLocationCoordinate2D(latitude: transport.positionY, longitude: transport.positionX)
         self.annotation = annotation
     }
 }

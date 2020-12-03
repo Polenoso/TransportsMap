@@ -39,6 +39,7 @@
 		5B4183842579018D00AB572D /* TransportsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183832579018D00AB572D /* TransportsAPIClient.swift */; };
 		5B41838D2579346800AB572D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 5B41838C2579346800AB572D /* Moya */; };
 		5B41838F2579346800AB572D /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 5B41838E2579346800AB572D /* RxMoya */; };
+		5B4183942579389300AB572D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183932579389300AB572D /* Endpoint.swift */; };
 		5B4957BC2577DD560070F04B /* TransportsFetcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		5B41837125780A9800AB572D /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
 		5B41837E2578FFC700AB572D /* TransportsMapViewStateModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsMapViewStateModels.swift; sourceTree = "<group>"; };
 		5B4183832579018D00AB572D /* TransportsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsAPIClient.swift; sourceTree = "<group>"; };
+		5B4183932579389300AB572D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsFetcherSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,8 +300,10 @@
 		5B285FD725768C0400B62C59 /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
+				5B418398257939DF00AB572D /* Endpoints */,
 				5B41837125780A9800AB572D /* MockAPIClient.swift */,
 				5B4183832579018D00AB572D /* TransportsAPIClient.swift */,
+				5B4183932579389300AB572D /* Endpoint.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -378,6 +382,13 @@
 				5B41837E2578FFC700AB572D /* TransportsMapViewStateModels.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		5B418398257939DF00AB572D /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoints;
 			sourceTree = "<group>";
 		};
 		5B4957B92577DD130070F04B /* Application */ = {
@@ -558,6 +569,7 @@
 				5B41837F2578FFC700AB572D /* TransportsMapViewStateModels.swift in Sources */,
 				5B4183842579018D00AB572D /* TransportsAPIClient.swift in Sources */,
 				5B285FCB25768A8700B62C59 /* City.swift in Sources */,
+				5B4183942579389300AB572D /* Endpoint.swift in Sources */,
 				5B41837225780A9800AB572D /* MockAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

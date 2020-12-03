@@ -33,20 +33,27 @@ final class TransportsMapViewController: UIViewController {
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
         mapView.delegate = self
+//        mapView.register(MKPinAnnotationView.self, forAnnotationViewWithReuseIdentifier: "MKPinAnnotationView")
         guard let center = input?.mapRegion.center else { return }
-        mapView.region = .init(center: center, span: MKCoordinateSpan())
+        mapView.region = .init(center: center, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     }
 }
 
 extension TransportsMapViewController: TransportsMapOutput {
     func stateChanged() {
         guard let input = input else { return }
-        let annotations = mapView.annotations
-        mapView.removeAnnotations(annotations)
-        mapView.addAnnotations(input.transports.map(\.annotation))
+        mapView.showAnnotations(input.transports.map(\.annotation), animated: true)
     }
 }
 
 // MARK: - MKMapViewDelegate
 
-extension TransportsMapViewController: MKMapViewDelegate { }
+extension TransportsMapViewController: MKMapViewDelegate {
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        mapView.dequeueReusableAnnotationView(withIdentifier: "MKPinAnnotationView", for: annotation)
+//    }
+}
+
+class PinView: MKAnnotationView {
+    static let reuseIdentifier: String = "PinViewReuseIdentifier"
+}

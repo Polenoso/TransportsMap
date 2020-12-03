@@ -19,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                        minLong: -9.160096,
                                                        maxLat: 38.739429,
                                                        maxLong: -9.137115),
-                                        city: City(name: "Mock",
+                                        city: City(name: "Lisboa",
                                                    centerLat: 38.736946,
                                                    centerLon: -9.142685),
-                                        transportsFetch: TransportsFetcher(repository: TransportRepository(client: MockAPIClient(),
+                                        transportsFetch: TransportsFetcher(repository: TransportRepository(client: TransportsAPIClient(),
                                                                                                            mapper: AnyTransportDataModelToDomainMapper())))
         vc.input = vm
         self.window?.rootViewController = vc
