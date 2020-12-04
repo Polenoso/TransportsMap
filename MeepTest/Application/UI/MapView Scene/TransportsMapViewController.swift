@@ -33,7 +33,7 @@ final class TransportsMapViewController: UIViewController {
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
         mapView.delegate = self
-//        mapView.register(MKPinAnnotationView.self, forAnnotationViewWithReuseIdentifier: "MKPinAnnotationView")
+        mapView.register(PinView.self, forAnnotationViewWithReuseIdentifier: "PinViewReuseIdentifier")
         guard let center = input?.mapRegion.center else { return }
         mapView.region = .init(center: center, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     }
@@ -49,9 +49,14 @@ extension TransportsMapViewController: TransportsMapOutput {
 // MARK: - MKMapViewDelegate
 
 extension TransportsMapViewController: MKMapViewDelegate {
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        mapView.dequeueReusableAnnotationView(withIdentifier: "MKPinAnnotationView", for: annotation)
-//    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let view = mapView.dequeueReusableAnnotationView(withIdentifier: PinView.reuseIdentifier, for: annotation) as? PinView
+        guard let pinState = input?.transportPins.first(where: { $0.annotation.coordinate.latitude == annotation.coordinate.latitude && $0.annotation.coordinate.longitude == annotation.coordinate.longitude}) else { return nil }
+        
+        view?.applyState(pinState)
+        
+        return view
+    }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let coordinate = view.annotation?.coordinate else { return }
@@ -59,6 +64,10 @@ extension TransportsMapViewController: MKMapViewDelegate {
     }
 }
 
-class PinView: MKAnnotationView {
+class PinView: MKPinAnnotationView {
     static let reuseIdentifier: String = "PinViewReuseIdentifier"
+    
+    func applyState(_ state: TransportViewState) {
+        pinTintColor = state.companyZoneColor
+    }
 }

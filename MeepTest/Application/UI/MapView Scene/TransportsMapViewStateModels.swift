@@ -10,11 +10,15 @@ import MapKit
 
 struct TransportViewState {
     let annotation: MKAnnotation
+    let companyZoneColor: UIColor
     
     init(from transport: Transport) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: transport.positionY, longitude: transport.positionX)
+        annotation.title = transport.name
+        annotation.subtitle = "\(transport.companyZoneId)"
         self.annotation = annotation
+        self.companyZoneColor = CompanyZoneProviders().colorForProvider(id: transport.companyZoneId)
     }
 }
 
