@@ -42,7 +42,9 @@ final class TransportsMapViewController: UIViewController {
 extension TransportsMapViewController: TransportsMapOutput {
     func stateChanged() {
         guard let input = input else { return }
-        mapView.showAnnotations(input.transportPins.map(\.annotation), animated: true)
+        let annotations = mapView.annotations
+        mapView.removeAnnotations(annotations)
+        mapView.addAnnotations(input.transportPins.map(\.annotation))
     }
 }
 
@@ -61,6 +63,22 @@ extension TransportsMapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let coordinate = view.annotation?.coordinate else { return }
         input?.onPinSelected(coordinate: coordinate)
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        guard !(input?.isLoading ?? false) && !animated else { return }
+        let bottomLeft = mapView.convert(CGPoint(x: 0, y: mapView.frame.height),
+                                         toCoordinateFrom: mapView)
+        let topRight = mapView.convert(CGPoint(x: mapView.frame.width,
+                                               y: 0),
+                                       toCoordinateFrom: mapView)
+        let request = MapViewRegionChangesRequest(center: mapView.centerCoordinate,
+                                                  maxY: topRight.latitude,
+                                                  minY: bottomLeft.latitude,
+                                                  minX: bottomLeft.longitude,
+                                                  maxX: topRight.longitude)
+        
+        input?.onRegionChanged(request: request)
     }
 }
 

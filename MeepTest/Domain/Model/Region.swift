@@ -13,3 +13,5 @@ struct Region {
     let maxLat: Double
     let maxLong: Double
 }
+
+extension Region: Equatable { }

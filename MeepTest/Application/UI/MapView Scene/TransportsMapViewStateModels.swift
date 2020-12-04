@@ -25,3 +25,11 @@ struct TransportViewState {
 struct MapViewRegion {
     let center: CLLocationCoordinate2D
 }
+
+struct MapViewRegionChangesRequest {
+    let center: CLLocationCoordinate2D
+    let maxY: Double
+    let minY: Double
+    let minX: Double
+    let maxX: Double
+}

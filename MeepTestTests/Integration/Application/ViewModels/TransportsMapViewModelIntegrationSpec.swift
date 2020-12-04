@@ -25,6 +25,8 @@ final class TransportsMapViewModelIntegrationSpec: QuickSpec {
                                                                             companyZoneId: 1)
                 static let response = Single.just([mockTransportDataModel] as [TransportDataModelV1])
                 static let mockCoordinate: CLLocationCoordinate2D = .init(latitude: 1, longitude: 1)
+                static let regionChangesRequest = MapViewRegionChangesRequest(center: .init(latitude: 1, longitude: 1),
+                                                                              maxY: 1, minY: 1, minX: 1, maxX: 2)
             }
             var spy: TransportsAPIClientSpy!
             var viewModel: TransportsMapViewModel!
@@ -40,6 +42,7 @@ final class TransportsMapViewModelIntegrationSpec: QuickSpec {
             }
             
             afterEach {
+                spy = nil
                 viewModel = nil
             }
             
@@ -49,13 +52,13 @@ final class TransportsMapViewModelIntegrationSpec: QuickSpec {
                     
                     viewModel.onLoad()
                     
-                    expect(spy.fetchAllCalled).to(beTrue())
-                    expect(spy.fetchAllCalledTimes).to(equal(1))
-                    expect(spy.fetchAllReceivedRequest?.city).to(equal(TestDouble.city.name))
-                    expect(spy.fetchAllReceivedRequest?.lowerLeftLatLong.0).to(equal(TestDouble.region.minLat))
-                    expect(spy.fetchAllReceivedRequest?.lowerLeftLatLong.1).to(equal(TestDouble.region.minLong))
-                    expect(spy.fetchAllReceivedRequest?.upperRightLatLong.0).to(equal(TestDouble.region.maxLat))
-                    expect(spy.fetchAllReceivedRequest?.upperRightLatLong.1).to(equal(TestDouble.region.maxLong))
+                    expect(spy.fetchAllCalled).toEventually(beTrue())
+                    expect(spy.fetchAllCalledTimes).toEventually(equal(1))
+                    expect(spy.fetchAllReceivedRequest?.city).toEventually(equal(TestDouble.city.name))
+                    expect(spy.fetchAllReceivedRequest?.lowerLeftLatLong.0).toEventually(equal(TestDouble.region.minLat))
+                    expect(spy.fetchAllReceivedRequest?.lowerLeftLatLong.1).toEventually(equal(TestDouble.region.minLong))
+                    expect(spy.fetchAllReceivedRequest?.upperRightLatLong.0).toEventually(equal(TestDouble.region.maxLat))
+                    expect(spy.fetchAllReceivedRequest?.upperRightLatLong.1).toEventually(equal(TestDouble.region.maxLong))
                 }
                 
                 it("should map result to expected transports view state") {
@@ -78,9 +81,64 @@ final class TransportsMapViewModelIntegrationSpec: QuickSpec {
                     
                     viewModel.onPinSelected(coordinate: TestDouble.mockCoordinate)
                     
-                    expect(sceneDelegateSpy.onTransportSelectedCalled).to(beTrue())
+                    expect(sceneDelegateSpy.onTransportSelectedCalled).toEventually(beTrue())
                     expect(sceneDelegateSpy.onTransportSelectedRequest?.id).to(equal(TestDouble.mockTransportDataModel.id))
                     expect(sceneDelegateSpy.onTransportSelectedCalledTimes).to(equal(1))
+                }
+            }
+            
+            context("on region changed") {
+                it("should make api call") {
+                    spy.fetchAllExpectedResponse = TestDouble.response
+                    viewModel.timeout = 0
+                    viewModel.onRegionChanged(request: TestDouble.regionChangesRequest)
+                    
+                    expect(spy.fetchAllCalled).toEventually(beTrue())
+                    expect(spy.fetchAllCalledTimes).toEventually(equal(1))
+                    expect(spy.fetchAllReceivedRequest?.city).toEventually(equal(TestDouble.city.name))
+                    expect(spy.fetchAllReceivedRequest?.lowerLeftLatLong.0).toEventually(equal(TestDouble.regionChangesRequest.minY))
+                    expect(spy.fetchAllReceivedRequest?.lowerLeftLatLong.1).toEventually(equal(TestDouble.regionChangesRequest.minX))
+                    expect(spy.fetchAllReceivedRequest?.upperRightLatLong.0).toEventually(equal(TestDouble.regionChangesRequest.maxY))
+                    expect(spy.fetchAllReceivedRequest?.upperRightLatLong.1).toEventually(equal(TestDouble.regionChangesRequest.maxX))
+                }
+                
+                it("multiple times same region should make api call just once") {
+                    spy.fetchAllExpectedResponse = TestDouble.response
+                    viewModel.timeout = 10
+                    
+                    viewModel.onRegionChanged(request: TestDouble.regionChangesRequest)
+                    viewModel.onRegionChanged(request: TestDouble.regionChangesRequest)
+                    viewModel.onRegionChanged(request: TestDouble.regionChangesRequest)
+                    viewModel.onRegionChanged(request: TestDouble.regionChangesRequest)
+                    
+                    expect(spy.fetchAllCalled).toEventually(beTrue())
+                    expect(spy.fetchAllCalledTimes).toEventually(equal(1))
+                    expect(spy.fetchAllReceivedRequest?.city).toEventually(equal(TestDouble.city.name))
+                    expect(spy.fetchAllReceivedRequest?.lowerLeftLatLong.0).toEventually(equal(TestDouble.regionChangesRequest.minY))
+                    expect(spy.fetchAllReceivedRequest?.lowerLeftLatLong.1).toEventually(equal(TestDouble.regionChangesRequest.minX))
+                    expect(spy.fetchAllReceivedRequest?.upperRightLatLong.0).toEventually(equal(TestDouble.regionChangesRequest.maxY))
+                    expect(spy.fetchAllReceivedRequest?.upperRightLatLong.1).toEventually(equal(TestDouble.regionChangesRequest.maxX))
+                }
+                
+                it("multiple times different region before debounce should make api call once") {
+                    spy.fetchAllExpectedResponse = TestDouble.response
+                    viewModel.timeout = 10
+
+                    let differentRegion = MapViewRegionChangesRequest(center: .init(),
+                                                                      maxY: 3,
+                                                                      minY: 3,
+                                                                      minX: 3,
+                                                                      maxX: 3)
+                    viewModel.onRegionChanged(request: TestDouble.regionChangesRequest)
+                    viewModel.onRegionChanged(request: differentRegion)
+                    
+                    expect(spy.fetchAllCalled).toEventually(beTrue())
+                    expect(spy.fetchAllCalledTimes).toEventually(equal(1))
+                    expect(spy.fetchAllReceivedRequest?.city).toEventually(equal(TestDouble.city.name))
+                    expect(spy.fetchAllReceivedRequest?.lowerLeftLatLong.0).toEventually(equal(differentRegion.minY))
+                    expect(spy.fetchAllReceivedRequest?.lowerLeftLatLong.1).toEventually(equal(differentRegion.minX))
+                    expect(spy.fetchAllReceivedRequest?.upperRightLatLong.0).toEventually(equal(differentRegion.maxY))
+                    expect(spy.fetchAllReceivedRequest?.upperRightLatLong.1).toEventually(equal(differentRegion.maxX))
                 }
             }
         }
