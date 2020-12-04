@@ -31,18 +31,17 @@ final class TransportsMapViewCoordinator {
                                         city: city,
                                         transportsFetch: TransportsFetcher(repository: TransportRepository(client: TransportsAPIClient(),
                                                                                                            mapper: AnyTransportDataModelToDomainMapper())))
-//        let vm = TransportsMapViewModel(output: vc,
-//                                        region: Region(minLat: 38.711046,
-//                                                       minLong: -9.160096,
-//                                                       maxLat: 38.739429,
-//                                                       maxLong: -9.137115),
-//                                        city: City(name: "Lisboa",
-//                                                   centerLat: 38.736946,
-//                                                   centerLon: -9.142685),
-//                                        transportsFetch: TransportsFetcher(repository: TransportRepository(client: TransportsAPIClient(),
-//                                                                                                           mapper: AnyTransportDataModelToDomainMapper())))
         vc.input = vm
+        vm.sceneDelegate = self
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
+    }
+}
+
+extension TransportsMapViewCoordinator: TransportsMapViewSceneDelegate {
+    func onTransportSelected(_ transport: Transport) {
+        let coordinator = TransportDetailCoordinator(fromVC: window?.rootViewController,
+                                                     transport: transport)
+        coordinator.start()
     }
 }

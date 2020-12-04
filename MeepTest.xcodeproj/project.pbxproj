@@ -42,6 +42,12 @@
 		5B41839D2579501800AB572D /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41839C2579501800AB572D /* Configuration.swift */; };
 		5B4183A9257A4DF100AB572D /* TransportsMapViewModelIntegrationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183A8257A4DF100AB572D /* TransportsMapViewModelIntegrationSpec.swift */; };
 		5B4183BB257A548200AB572D /* TransportsMapViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183BA257A548200AB572D /* TransportsMapViewCoordinator.swift */; };
+		5B4183C4257A588700AB572D /* TransportDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183C3257A588700AB572D /* TransportDetailView.swift */; };
+		5B4183C9257A5D6800AB572D /* TransportDetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183C8257A5D6800AB572D /* TransportDetailViewState.swift */; };
+		5B4183CE257A5DE100AB572D /* TransportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183CD257A5DE100AB572D /* TransportDetailViewController.swift */; };
+		5B4183D3257A5E4900AB572D /* TransportDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183D2257A5E4900AB572D /* TransportDetailViewModel.swift */; };
+		5B4183D8257A5FD900AB572D /* TransportDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183D7257A5FD900AB572D /* TransportDetailCoordinator.swift */; };
+		5B4183DD257A69DD00AB572D /* MapViewSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183DC257A69DD00AB572D /* MapViewSceneDelegate.swift */; };
 		5B4957BC2577DD560070F04B /* TransportsFetcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +103,12 @@
 		5B41839C2579501800AB572D /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		5B4183A8257A4DF100AB572D /* TransportsMapViewModelIntegrationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsMapViewModelIntegrationSpec.swift; sourceTree = "<group>"; };
 		5B4183BA257A548200AB572D /* TransportsMapViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsMapViewCoordinator.swift; sourceTree = "<group>"; };
+		5B4183C3257A588700AB572D /* TransportDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDetailView.swift; sourceTree = "<group>"; };
+		5B4183C8257A5D6800AB572D /* TransportDetailViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDetailViewState.swift; sourceTree = "<group>"; };
+		5B4183CD257A5DE100AB572D /* TransportDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDetailViewController.swift; sourceTree = "<group>"; };
+		5B4183D2257A5E4900AB572D /* TransportDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDetailViewModel.swift; sourceTree = "<group>"; };
+		5B4183D7257A5FD900AB572D /* TransportDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDetailCoordinator.swift; sourceTree = "<group>"; };
+		5B4183DC257A69DD00AB572D /* MapViewSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewSceneDelegate.swift; sourceTree = "<group>"; };
 		5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsFetcherSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -374,6 +386,7 @@
 		5B4183632577F7C600AB572D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5B4183C2257A569100AB572D /* Detail Scene */,
 				5B4183B9257A545F00AB572D /* MapView Scene */,
 			);
 			path = UI;
@@ -409,8 +422,21 @@
 				5B41836C2577F81300AB572D /* TransportsMapViewModel.swift */,
 				5B41837E2578FFC700AB572D /* TransportsMapViewStateModels.swift */,
 				5B4183BA257A548200AB572D /* TransportsMapViewCoordinator.swift */,
+				5B4183DC257A69DD00AB572D /* MapViewSceneDelegate.swift */,
 			);
 			path = "MapView Scene";
+			sourceTree = "<group>";
+		};
+		5B4183C2257A569100AB572D /* Detail Scene */ = {
+			isa = PBXGroup;
+			children = (
+				5B4183C3257A588700AB572D /* TransportDetailView.swift */,
+				5B4183C8257A5D6800AB572D /* TransportDetailViewState.swift */,
+				5B4183CD257A5DE100AB572D /* TransportDetailViewController.swift */,
+				5B4183D2257A5E4900AB572D /* TransportDetailViewModel.swift */,
+				5B4183D7257A5FD900AB572D /* TransportDetailCoordinator.swift */,
+			);
+			path = "Detail Scene";
 			sourceTree = "<group>";
 		};
 		5B4957B92577DD130070F04B /* Application */ = {
@@ -577,10 +603,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B285FB925768A0500B62C59 /* TransportsDataModelV1.swift in Sources */,
+				5B4183C9257A5D6800AB572D /* TransportDetailViewState.swift in Sources */,
 				5B230D7A2575525100A161A2 /* AppDelegate.swift in Sources */,
 				5B285F622576526E00B62C59 /* TransportRepository.swift in Sources */,
 				5B285FE625768EEE00B62C59 /* AnyTransportDataModelMapper.swift in Sources */,
 				5B285FE025768D6F00B62C59 /* TransportDataModelToDomainMapper.swift in Sources */,
+				5B4183C4257A588700AB572D /* TransportDetailView.swift in Sources */,
 				5B285FDA25768C3100B62C59 /* APIClient.swift in Sources */,
 				5B4183652577F80600AB572D /* TransportsMapViewController.swift in Sources */,
 				5B285FD125768AC000B62C59 /* TransportRequestV1.swift in Sources */,
@@ -591,9 +619,13 @@
 				5B285F5A2576516500B62C59 /* Transport.swift in Sources */,
 				5B41839D2579501800AB572D /* Configuration.swift in Sources */,
 				5B41837F2578FFC700AB572D /* TransportsMapViewStateModels.swift in Sources */,
+				5B4183D8257A5FD900AB572D /* TransportDetailCoordinator.swift in Sources */,
 				5B4183842579018D00AB572D /* TransportsAPIClient.swift in Sources */,
+				5B4183CE257A5DE100AB572D /* TransportDetailViewController.swift in Sources */,
 				5B285FCB25768A8700B62C59 /* City.swift in Sources */,
 				5B4183942579389300AB572D /* Endpoint.swift in Sources */,
+				5B4183D3257A5E4900AB572D /* TransportDetailViewModel.swift in Sources */,
+				5B4183DD257A69DD00AB572D /* MapViewSceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

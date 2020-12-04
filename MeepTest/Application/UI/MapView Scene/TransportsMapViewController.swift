@@ -52,6 +52,11 @@ extension TransportsMapViewController: MKMapViewDelegate {
 //    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 //        mapView.dequeueReusableAnnotationView(withIdentifier: "MKPinAnnotationView", for: annotation)
 //    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let coordinate = view.annotation?.coordinate else { return }
+        input?.onPinSelected(coordinate: coordinate)
+    }
 }
 
 class PinView: MKAnnotationView {

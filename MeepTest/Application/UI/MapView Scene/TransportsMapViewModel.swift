@@ -13,6 +13,7 @@ protocol TransportsMapInput: AnyObject {
     var transportPins: [TransportViewState] { get }
     var mapRegion: MapViewRegion { get }
     func onLoad()
+    func onPinSelected(coordinate: CLLocationCoordinate2D)
 }
 protocol TransportsMapOutput: AnyObject {
     func stateChanged()
@@ -30,6 +31,7 @@ struct TransportsMapViewState {
 
 final class TransportsMapViewModel: TransportsMapInput {
     private weak var output: TransportsMapOutput?
+    var sceneDelegate: TransportsMapViewSceneDelegate?
     
     //MARK: - usecases
     private let transportsFetch: TransportsFetcher
@@ -67,6 +69,11 @@ final class TransportsMapViewModel: TransportsMapInput {
                 self.output?.stateChanged()
             })
             .disposed(by: disposeBag)
+    }
+    
+    func onPinSelected(coordinate: CLLocationCoordinate2D) {
+        guard let transport = transports.first(where: { $0.positionX == coordinate.longitude && $0.positionY == coordinate.latitude }) else { return }
+        sceneDelegate?.onTransportSelected(transport)
     }
 }
 
