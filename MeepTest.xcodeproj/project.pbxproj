@@ -41,6 +41,7 @@
 		5B4183942579389300AB572D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183932579389300AB572D /* Endpoint.swift */; };
 		5B41839D2579501800AB572D /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41839C2579501800AB572D /* Configuration.swift */; };
 		5B4183A9257A4DF100AB572D /* TransportsMapViewModelIntegrationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183A8257A4DF100AB572D /* TransportsMapViewModelIntegrationSpec.swift */; };
+		5B4183BB257A548200AB572D /* TransportsMapViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183BA257A548200AB572D /* TransportsMapViewCoordinator.swift */; };
 		5B4957BC2577DD560070F04B /* TransportsFetcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		5B4183932579389300AB572D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		5B41839C2579501800AB572D /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		5B4183A8257A4DF100AB572D /* TransportsMapViewModelIntegrationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsMapViewModelIntegrationSpec.swift; sourceTree = "<group>"; };
+		5B4183BA257A548200AB572D /* TransportsMapViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsMapViewCoordinator.swift; sourceTree = "<group>"; };
 		5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsFetcherSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -372,9 +374,7 @@
 		5B4183632577F7C600AB572D /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				5B4183642577F80600AB572D /* TransportsMapViewController.swift */,
-				5B41836C2577F81300AB572D /* TransportsMapViewModel.swift */,
-				5B41837E2578FFC700AB572D /* TransportsMapViewStateModels.swift */,
+				5B4183B9257A545F00AB572D /* MapView Scene */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -400,6 +400,17 @@
 				5B4183A8257A4DF100AB572D /* TransportsMapViewModelIntegrationSpec.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5B4183B9257A545F00AB572D /* MapView Scene */ = {
+			isa = PBXGroup;
+			children = (
+				5B4183642577F80600AB572D /* TransportsMapViewController.swift */,
+				5B41836C2577F81300AB572D /* TransportsMapViewModel.swift */,
+				5B41837E2578FFC700AB572D /* TransportsMapViewStateModels.swift */,
+				5B4183BA257A548200AB572D /* TransportsMapViewCoordinator.swift */,
+			);
+			path = "MapView Scene";
 			sourceTree = "<group>";
 		};
 		5B4957B92577DD130070F04B /* Application */ = {
@@ -573,6 +584,7 @@
 				5B285FDA25768C3100B62C59 /* APIClient.swift in Sources */,
 				5B4183652577F80600AB572D /* TransportsMapViewController.swift in Sources */,
 				5B285FD125768AC000B62C59 /* TransportRequestV1.swift in Sources */,
+				5B4183BB257A548200AB572D /* TransportsMapViewCoordinator.swift in Sources */,
 				5B285F842576570A00B62C59 /* TransportsFetcher.swift in Sources */,
 				5B41836D2577F81300AB572D /* TransportsMapViewModel.swift in Sources */,
 				5B285FC325768A7500B62C59 /* Region.swift in Sources */,
