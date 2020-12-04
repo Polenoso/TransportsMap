@@ -13,8 +13,10 @@ enum TransportsEndpointCollection {
 }
 
 extension TransportsEndpointCollection: TargetType {
+    @Environment static var configuration: Configuration
+    
     var baseURL: URL {
-        guard let url = URL(string:"https://apidev.meep.me/tripplan/api") else { //TODO: read from configuration
+        guard let url = URL(string: TransportsEndpointCollection.configuration.baseUrl) else { //TODO: read from configuration
             fatalError("there must be a valid baseUrl")
         }
         return url

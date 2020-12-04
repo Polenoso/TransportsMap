@@ -40,6 +40,7 @@
 		5B41838D2579346800AB572D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 5B41838C2579346800AB572D /* Moya */; };
 		5B41838F2579346800AB572D /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 5B41838E2579346800AB572D /* RxMoya */; };
 		5B4183942579389300AB572D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183932579389300AB572D /* Endpoint.swift */; };
+		5B41839D2579501800AB572D /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41839C2579501800AB572D /* Configuration.swift */; };
 		5B4957BC2577DD560070F04B /* TransportsFetcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		5B41837E2578FFC700AB572D /* TransportsMapViewStateModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsMapViewStateModels.swift; sourceTree = "<group>"; };
 		5B4183832579018D00AB572D /* TransportsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsAPIClient.swift; sourceTree = "<group>"; };
 		5B4183932579389300AB572D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5B41839C2579501800AB572D /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsFetcherSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -293,6 +295,7 @@
 			children = (
 				5B285FE425768EC000B62C59 /* Mappers */,
 				5B285FD725768C0400B62C59 /* APIClient */,
+				5B41839C2579501800AB572D /* Configuration.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -311,7 +314,6 @@
 		5B285FD825768C0E00B62C59 /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				5B285FF82576AD1500B62C59 /* Endpoint */,
 				5B285FB6257689E100B62C59 /* Data */,
 				5B285FD925768C3100B62C59 /* APIClient.swift */,
 			);
@@ -356,13 +358,6 @@
 				5B285FF025768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift */,
 			);
 			path = Mappers;
-			sourceTree = "<group>";
-		};
-		5B285FF82576AD1500B62C59 /* Endpoint */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Endpoint;
 			sourceTree = "<group>";
 		};
 		5B285FF92576ADBF00B62C59 /* Application */ = {
@@ -566,6 +561,7 @@
 				5B41836D2577F81300AB572D /* TransportsMapViewModel.swift in Sources */,
 				5B285FC325768A7500B62C59 /* Region.swift in Sources */,
 				5B285F5A2576516500B62C59 /* Transport.swift in Sources */,
+				5B41839D2579501800AB572D /* Configuration.swift in Sources */,
 				5B41837F2578FFC700AB572D /* TransportsMapViewStateModels.swift in Sources */,
 				5B4183842579018D00AB572D /* TransportsAPIClient.swift in Sources */,
 				5B285FCB25768A8700B62C59 /* City.swift in Sources */,
