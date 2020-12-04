@@ -41,6 +41,7 @@
 		5B41838F2579346800AB572D /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 5B41838E2579346800AB572D /* RxMoya */; };
 		5B4183942579389300AB572D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183932579389300AB572D /* Endpoint.swift */; };
 		5B41839D2579501800AB572D /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41839C2579501800AB572D /* Configuration.swift */; };
+		5B4183A9257A4DF100AB572D /* TransportsMapViewModelIntegrationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183A8257A4DF100AB572D /* TransportsMapViewModelIntegrationSpec.swift */; };
 		5B4957BC2577DD560070F04B /* TransportsFetcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		5B4183832579018D00AB572D /* TransportsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsAPIClient.swift; sourceTree = "<group>"; };
 		5B4183932579389300AB572D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		5B41839C2579501800AB572D /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		5B4183A8257A4DF100AB572D /* TransportsMapViewModelIntegrationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsMapViewModelIntegrationSpec.swift; sourceTree = "<group>"; };
 		5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsFetcherSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,6 +200,7 @@
 		5B285F8B2576585100B62C59 /* Integration */ = {
 			isa = PBXGroup;
 			children = (
+				5B4183A6257A4DCB00AB572D /* Application */,
 			);
 			path = Integration;
 			sourceTree = "<group>";
@@ -384,6 +387,22 @@
 			children = (
 			);
 			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		5B4183A6257A4DCB00AB572D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5B4183A7257A4DD400AB572D /* ViewModels */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5B4183A7257A4DD400AB572D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5B4183A8257A4DF100AB572D /* TransportsMapViewModelIntegrationSpec.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		5B4957B92577DD130070F04B /* Application */ = {
@@ -576,6 +595,7 @@
 			files = (
 				5B285FF125768FE200B62C59 /* AnyTransportDataModelToDomainSpec.swift in Sources */,
 				5B285FA9257680CB00B62C59 /* JsonLoader.swift in Sources */,
+				5B4183A9257A4DF100AB572D /* TransportsMapViewModelIntegrationSpec.swift in Sources */,
 				5B230D912575525400A161A2 /* MeepTestTests.swift in Sources */,
 				5B285FA025767F5100B62C59 /* AnyTransportDataModelSpec.swift in Sources */,
 				5B4957BC2577DD560070F04B /* TransportsFetcherSpec.swift in Sources */,

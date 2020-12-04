@@ -19,7 +19,7 @@ final class TransportsFetcherSpec: QuickSpec {
                 static let successRepository = SuccessTransportsRepositoryMock()
                 static let errorRepository = ErrorTransportsRepositoryMock()
                 static let region = Region(minLat: 1, minLong: 1, maxLat: 1, maxLong: 1)
-                static let city = City(name: "City")
+                static let city = City(name: "City", centerLat: 1, centerLon: 1)
             }
             
             context("on success") {

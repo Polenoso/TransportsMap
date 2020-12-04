@@ -42,7 +42,7 @@ final class TransportsMapViewController: UIViewController {
 extension TransportsMapViewController: TransportsMapOutput {
     func stateChanged() {
         guard let input = input else { return }
-        mapView.showAnnotations(input.transports.map(\.annotation), animated: true)
+        mapView.showAnnotations(input.transportPins.map(\.annotation), animated: true)
     }
 }
 

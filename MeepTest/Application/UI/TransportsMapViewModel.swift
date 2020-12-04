@@ -10,7 +10,7 @@ import RxSwift
 import CoreLocation
 
 protocol TransportsMapInput: AnyObject {
-    var transports: [TransportViewState] { get }
+    var transportPins: [TransportViewState] { get }
     var mapRegion: MapViewRegion { get }
     func onLoad()
 }
@@ -38,15 +38,16 @@ final class TransportsMapViewModel: TransportsMapInput {
     private let disposeBag = DisposeBag()
     
     //MARK: - View State
-    private(set) var transports: [TransportViewState]
+    var transportPins: [TransportViewState] { transports.map(TransportViewState.init) }
     
     var mapRegion: MapViewRegion
     
     //MARK: - Private parameters
     private var city: City
     private var region: Region
+    private var transports: [Transport]
     
-    init(output: TransportsMapOutput,
+    init(output: TransportsMapOutput?,
          region: Region,
          city: City,
          transportsFetch: TransportsFetcher) {
@@ -62,7 +63,7 @@ final class TransportsMapViewModel: TransportsMapInput {
         transportsFetch(region: region, city: city)
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { transports in
-                self.transports = transports.map(TransportViewState.init)
+                self.transports = transports
                 self.output?.stateChanged()
             })
             .disposed(by: disposeBag)
