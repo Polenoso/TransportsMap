@@ -9,6 +9,7 @@ import Foundation
 
 protocol TransportDetailInput {
     var viewState: TransportDetailViewState { get }
+    func onCloseTap()
 }
 
 protocol TransportDetailOutput: AnyObject { }
@@ -22,7 +23,16 @@ final class TransportDetailViewModel: TransportDetailInput {
     //MARK: - Private
     private let transport: Transport
     
-    init(transport: Transport) {
+    //MARK: - Scene Delegate
+    private var sceneDelegate: TransportDetailSceneDelegate?
+    
+    init(sceneDelegate: TransportDetailSceneDelegate?,
+         transport: Transport) {
         self.transport = transport
+        self.sceneDelegate = sceneDelegate
+    }
+    
+    func onCloseTap() {
+        sceneDelegate?.onClose()
     }
 }

@@ -49,6 +49,7 @@
 		5B4183D8257A5FD900AB572D /* TransportDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183D7257A5FD900AB572D /* TransportDetailCoordinator.swift */; };
 		5B4183DD257A69DD00AB572D /* MapViewSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4183DC257A69DD00AB572D /* MapViewSceneDelegate.swift */; };
 		5B4957BC2577DD560070F04B /* TransportsFetcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */; };
+		5B8D54F0257A7CFD00A45B71 /* TransportDetailSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D54EF257A7CFD00A45B71 /* TransportDetailSceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		5B4183D7257A5FD900AB572D /* TransportDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDetailCoordinator.swift; sourceTree = "<group>"; };
 		5B4183DC257A69DD00AB572D /* MapViewSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewSceneDelegate.swift; sourceTree = "<group>"; };
 		5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsFetcherSpec.swift; sourceTree = "<group>"; };
+		5B8D54EF257A7CFD00A45B71 /* TransportDetailSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDetailSceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,6 +437,7 @@
 				5B4183CD257A5DE100AB572D /* TransportDetailViewController.swift */,
 				5B4183D2257A5E4900AB572D /* TransportDetailViewModel.swift */,
 				5B4183D7257A5FD900AB572D /* TransportDetailCoordinator.swift */,
+				5B8D54EF257A7CFD00A45B71 /* TransportDetailSceneDelegate.swift */,
 			);
 			path = "Detail Scene";
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B285FB925768A0500B62C59 /* TransportsDataModelV1.swift in Sources */,
+				5B8D54F0257A7CFD00A45B71 /* TransportDetailSceneDelegate.swift in Sources */,
 				5B4183C9257A5D6800AB572D /* TransportDetailViewState.swift in Sources */,
 				5B230D7A2575525100A161A2 /* AppDelegate.swift in Sources */,
 				5B285F622576526E00B62C59 /* TransportRepository.swift in Sources */,

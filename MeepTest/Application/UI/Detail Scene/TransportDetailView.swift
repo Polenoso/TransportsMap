@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol TransportDetailViewDelegate: AnyObject {
+    func didTapClose()
+}
+
 final class TransportDetailView: UIView {
+    weak var delegate: TransportDetailViewDelegate?
+    
     private var closeButton: UIButton = {
         let button = UIButton()
         if #available(iOS 13.0, *) {
@@ -15,6 +21,7 @@ final class TransportDetailView: UIView {
         } else {
             button.setTitle("X", for: .normal)
         }
+        button.tintColor = .black
         button.backgroundColor = .clear
         return button
     }()
@@ -83,6 +90,8 @@ final class TransportDetailView: UIView {
         scrollView.addSubview(containerView)
         
         addSubview(closeButton)
+        
+        closeButton.addTarget(self, action: #selector(closeButtonTap), for: .touchUpInside)
     }
     
     private func setupConstraints() {
@@ -112,6 +121,10 @@ final class TransportDetailView: UIView {
         nameLabel.text = state.name
         latitudeLabel.text = state.latitude
         longitudeLabel.text = state.longitude
+    }
+    
+    @objc private func closeButtonTap() {
+        delegate?.didTapClose()
     }
 }
 

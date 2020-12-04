@@ -9,6 +9,7 @@ import UIKit
 
 final class TransportDetailCoordinator: Coordinator {
     private weak var fromVC: UIViewController?
+    private weak var currentVC: UIViewController?
     private let transport: Transport
     
     init(fromVC: UIViewController?,
@@ -18,9 +19,16 @@ final class TransportDetailCoordinator: Coordinator {
     }
     func start() {
         let vc = TransportDetailViewController()
-        let vm = TransportDetailViewModel(transport: transport)
+        let vm = TransportDetailViewModel(sceneDelegate: self,
+                                          transport: transport)
         vc.input = vm
-        
+        currentVC = vc
         fromVC?.present(vc, animated: true)
+    }
+}
+
+extension TransportDetailCoordinator: TransportDetailSceneDelegate {
+    func onClose() {
+        currentVC?.dismiss(animated: true)
     }
 }
