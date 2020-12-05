@@ -88,3 +88,4 @@ Further development is needed.
 - Change Transport Model dependency in both scenes in order to decouple them. We would need to have a specific DTO for each scene (p.s MapTransport and DetailTransport) and let each transport provider manage the color or detail information.
 - Adding Snapshot testing to each View.
 - Adding UITest (E2E). This would make us implement the "fake" data provided by the Moya framework to avoid calling the endpoint in order to improve test speed.
+- Extract to modules (Packages) Domain, APIClient and even each scene implementation, in order to bound their context.
