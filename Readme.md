@@ -89,3 +89,4 @@ Further development is needed.
 - Adding Snapshot testing to each View.
 - Adding UITest (E2E). This would make us implement the "fake" data provided by the Moya framework to avoid calling the endpoint in order to improve test speed.
 - Extract to modules (Packages) Domain, APIClient and even each scene implementation, in order to bound their context.
+- Inject City from a Configuration file or from a City Selector Scene
