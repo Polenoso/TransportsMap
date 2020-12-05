@@ -4,21 +4,22 @@ This project displays different transport options in a map, given a City name an
 
 ## ****Installation****
 
-This project uses [SPM](https://swift.org/package-manager/) as a dependency manager.
-To run it
-    Open MeepTest.xcodeproj with Xcode
-    Select MeepTest target 
-    Select the desired Simulator
+This project uses [SPM](https://swift.org/package-manager/) as a dependency manager.  
+
+To run it  
+    Open MeepTest.xcodeproj with Xcode  
+    Select MeepTest target    
+    Select the desired Simulator    
     Run
 
-To test it
-    Select MeepTest target
-    Select Test in the dropdown menu in Xcode
-    Test
+To test it  
+    Select MeepTest target  
+    Select Test in the dropdown menu in Xcode  
+    Test  
     
 ### ***Requirements***
 
-``iOS 12.0 or higher``
+``iOS 12.0 or higher``  
 ``Swift 5.2``
 
 ## ****Structure****
@@ -35,49 +36,49 @@ For instance, the APIClient provider implementation is made under this layer. By
 
 Here it can be found:
 
-***Mappers*** 
-***Configuration***
-***APIClient***
-***CompanyZoneProviders***
+***Mappers***   
+***Configuration***  
+***APIClient***  
+***CompanyZoneProviders***  
 
 ### **Application**
 
 This layer contains all the iOS Platform specific implementation. We can find the UI scenes and usecases needed to provide information.
 
-***UI*** 
-            MapViewScene
-            DetailScene
+***UI***   
+            - MapViewScene  
+            - DetailScene  
 ***Use Cases***
 
 #### *UI Architecture*
-For UI we've decided to use a Clean MVVM + C (Model-View-ViewModel + Coordinator) pattern. 
+For UI we've decided to use a Clean MVVM + C (Model-View-ViewModel + Coordinator) pattern.  
 
-****View**** - represents the data to the user and responds to user interaction
-****Model**** - represents the data object needed to represent data in the view
-****ViewModel**** - represents the link to the user interaction and the domain data
+****View**** - represents the data to the user and responds to user interaction  
+****Model**** - represents the data object needed to represent data in the view  
+****ViewModel**** - represents the link to the user interaction and the domain data  
 
-****Coordinator**** - represents the navigation through Scenes.
-    ***SceneDelegate*** - represents the actions handled by the scene in order to navigate
+****Coordinator**** - represents the navigation through Scenes.  
+    ***SceneDelegate*** - represents the actions handled by the scene in order to navigate  
 
 ### **Domain**
 
-This layer contains the core of the project. It defines the basic needs and shared resources through the Application Layer. 
+This layer contains the core of the project. It defines the basic needs and shared resources through the Application Layer.  
 
-***Mappers***
-***Client***
-***Repository***
-***Model***
+***Mappers***  
+***Client***  
+***Repository***  
+***Model***  
 
----Considerations--- Domain is depending on RxSwift. 
+---Considerations--- Domain is depending on RxSwift.  
 
 ## ****Dependencies****
 
-[RxSwift](https://github.com/ReactiveX/RxSwift)
-    Handles the threading in the system. It also allows us to combine different streams and functions under a declarative way.
-[Moya](https://github.com/Moya/Moya)
-    Network abstraction layer to provide endpoints configurations, request performer and parser. It uses Alamofire under the hood.
-[Quick/Nimble](https://github.com/Quick/Quick)
-    Testing helper framework to help with test writing, providing a more sugar syntax.
+[RxSwift](https://github.com/ReactiveX/RxSwift)  
+    Handles the threading in the system. It also allows us to combine different streams and functions under a declarative way.  
+[Moya](https://github.com/Moya/Moya)  
+    Network abstraction layer to provide endpoints configurations, request performer and parser. It uses Alamofire under the hood.  
+[Quick/Nimble](https://github.com/Quick/Quick)  
+    Testing helper framework to help with test writing, providing a more sugar syntax.  
     
 
 #### **Next Steps**
