@@ -10,6 +10,7 @@ import MapKit
 
 struct TransportViewState {
     let annotation: MKAnnotation
+    let companyCluster: String
     let companyZoneColor: UIColor
     
     init(from transport: Transport) {
@@ -18,6 +19,7 @@ struct TransportViewState {
         annotation.title = transport.name
         annotation.subtitle = "\(transport.companyZoneId)"
         self.annotation = annotation
+        self.companyCluster = "\(transport.companyZoneId)"
         self.companyZoneColor = CompanyZoneProviders().colorForProvider(id: transport.companyZoneId)
     }
 }

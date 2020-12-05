@@ -35,7 +35,7 @@ final class TransportsMapViewController: UIViewController {
         mapView.delegate = self
         mapView.register(PinView.self, forAnnotationViewWithReuseIdentifier: "PinViewReuseIdentifier")
         guard let center = input?.mapRegion.center else { return }
-        mapView.region = .init(center: center, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        mapView.region = .init(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     }
 }
 
@@ -87,5 +87,19 @@ class PinView: MKPinAnnotationView {
     
     func applyState(_ state: TransportViewState) {
         pinTintColor = state.companyZoneColor
+        annotation = state.annotation
+        clusteringIdentifier = state.companyCluster
+        cluster?.tintColor = state.companyZoneColor
+    }
+    
+    override func prepareForDisplay() {
+        super.prepareForDisplay()
+        collisionMode = .circle
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        annotation = nil
+        clusteringIdentifier = nil
     }
 }
