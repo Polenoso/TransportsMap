@@ -51,6 +51,7 @@
 		5B4957BC2577DD560070F04B /* TransportsFetcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */; };
 		5B8D54F0257A7CFD00A45B71 /* TransportDetailSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D54EF257A7CFD00A45B71 /* TransportDetailSceneDelegate.swift */; };
 		5B8D5505257A9BBE00A45B71 /* CompanyZoneProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D5504257A9BBE00A45B71 /* CompanyZoneProviders.swift */; };
+		5BB4951C257BA9E400384A7B /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5BB4951B257BA9E400384A7B /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		5B4957BB2577DD560070F04B /* TransportsFetcherSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsFetcherSpec.swift; sourceTree = "<group>"; };
 		5B8D54EF257A7CFD00A45B71 /* TransportDetailSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDetailSceneDelegate.swift; sourceTree = "<group>"; };
 		5B8D5504257A9BBE00A45B71 /* CompanyZoneProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyZoneProviders.swift; sourceTree = "<group>"; };
+		5BB4951B257BA9E400384A7B /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		5B230D6D2575525100A161A2 = {
 			isa = PBXGroup;
 			children = (
+				5BB4951B257BA9E400384A7B /* Readme.md */,
 				5B230D782575525100A161A2 /* MeepTest */,
 				5B230D8F2575525400A161A2 /* MeepTestTests */,
 				5B230D9A2575525400A161A2 /* MeepTestUITests */,
@@ -591,6 +594,7 @@
 			files = (
 				5B230D862575525400A161A2 /* LaunchScreen.storyboard in Resources */,
 				5B230D832575525400A161A2 /* Assets.xcassets in Resources */,
+				5BB4951C257BA9E400384A7B /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

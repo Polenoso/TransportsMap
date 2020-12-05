@@ -12,8 +12,9 @@ struct Environment {
     var wrappedValue: Configuration {
         #if DEBUG // NOTE: This would depend on the target
         return BetaConfiguration()
-        #endif
+        #else
         return ProductionConfiguration()
+        #endif
     }
     
     init() { }
